@@ -1,7 +1,5 @@
 from sklearn.preprocessing import OneHotEncoder
-from clean import clean_str
 from word2vec import word2vec
-from data_helper import data_helper
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -27,6 +25,7 @@ training_length = 10000
 learning_rate = 0.1
 train_loop = 4000
 train_test_ratio = 0.8
+label_set = [[1], [2], [3], [4], [5]]
 
 # Parameters for skip-gram model
 embedding_size = 128
@@ -44,7 +43,7 @@ class batch_generator():
         for i in range(len(self.train_x)):
             for _ in range(len(self.train_x[i]), self.max_len):
                 self.train_x[i].append(vocab_size - 1)
-        ohe = OneHotEncoder().fit([[1], [2], [3], [4], [5]])
+        ohe = OneHotEncoder().fit(label_set)
         self.train_y = ohe.transform(label).toarray()
         self.batch_size = batch_size
         self.length = len(raw)
