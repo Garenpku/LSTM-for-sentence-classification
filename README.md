@@ -18,7 +18,8 @@ It returns:
     eg: [[1], [0], [3], [2], [0]]
     
 2.label_set, the set of all labels, stored in a 2-D matrix.
-  eg: label_set = [[0], [1], [2]]
+   
+   eg: label_set = [[0], [1], [2]]
   
 No more~
 
@@ -32,6 +33,6 @@ What you have to modify:
 
 3.build_dataset
 
-line 68: pre-trained word vector file. Mine is trained from wiki corpus.
+  line 68: pre-trained word vector file. Mine is trained from wiki corpus.
 
-line 81-87: Modify it to adapt to the file format.
+  line 81-87: Modify it to adapt to the file format.
